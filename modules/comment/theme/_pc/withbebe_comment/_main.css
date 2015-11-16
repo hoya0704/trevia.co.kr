@@ -1,0 +1,94 @@
+/* list */
+#clist {padding:0 10px 10px 10px;background:#fcfcfc;border:#e9e9e9 solid 1px;}
+#clist .line {border-bottom:#efefef solid 1px;padding:3px 0 3px 0;}
+#clist .comment {padding:10px 0 0 0;}
+#clist .comment .td1 {font-family:dotum;font-size:12px;color:#333333;padding:0 0 5px 0;}
+#clist .comment .td1 img {vertical-align:top;padding:0 3px 0 3px;}
+#clist .comment .td1 .st {color:#dfdfdf;padding:0 5px 0 5px;}
+#clist .comment .td1 .date {color:#aaaaaa;font-size:11px;}
+#clist .comment .td1 a {color:#aaaaaa;font-size:11px;}
+#clist .comment .td2 {font-family:dotum;font-size:12px;line-height:150%;font-family:dotum;font-size:12px;color:#666666;}
+#clist .comment .td2 img {padding:0 0 0 2px;}
+#clist .comment span.st_secret {color: #d03306;}
+#clist .page {padding:10px 0 0 0;text-align:center;}
+/* @list */
+
+/* write */
+.wrbox {padding:25px 0 0 0;}
+.mdbox {padding:0;}
+#cwrite {}
+#cwrite .box {padding:15px;border:#e9e9e9 solid 1px;background:#fcfcfc;}
+#cwrite .box .tt {position:relative;padding:0 0 2px 0;}
+#cwrite .box .tt .title {font-family:"malgun gothic",dotum;letter-spacing:-1px;font-weight:bold;color:#555555;font-size:14px;}
+#cwrite .box .tt span {font-weight:normal;font-size:11px;font-family:dotum;color:#888;letter-spacing:-1px;}
+#cwrite .box .tt .login {position:absolute;}
+#cwrite .box .tt .login img {position:relative;top:-5px;}
+#cwrite .box .tt .iconbox {float:right;padding:0 0 7px 0;}
+#cwrite .box .tt .iconbox a {padding:0 3px 0 3px;font-size:11px;font-family:dotum;color:#333;}
+#cwrite .box .tt .iconbox a:hover {color:#7899C7;}
+#cwrite .box .tt .iconbox a img {position:relative;top:2px;left:-2px;}
+#cwrite .box .inputbox {padding:0 0 0 0;}
+#cwrite .box .inputbox div {padding:5px 0 0 0;}
+#cwrite .box .inputbox div span {position:relative;top:3px;font-size:11px;font-family:dotum;color:#c0c0c0;padding:0 10px 0 0;letter-spacing:-1px;}
+#cwrite .box .inputbox .input1 {border:#dfdfdf solid 1px;padding:5px 5px 4px 5px;height:14px;width:150px;}
+#cwrite .box .editbox {padding:5px 0 0 0;}
+#cwrite .box .editbox .content {border:#dfdfdf solid 1px;padding:10px 5px 9px 5px;height:28px;width:667px;}
+#cwrite .box .uploadbox {padding:3px 0 3px 0;}
+#cwrite .box .bottom {font-size:12px;font-family:dotum;color:#999;letter-spacing:-1px;padding-top:5px}
+#cwrite .box .bottom input {vertical-align:middle;padding:0 3px 5px 0;}
+#cwrite .box .bottom span {padding:0 10px 0 0;}
+
+
+/* @write */
+
+/* pwbox  */
+#pwbox {display:none;position:absolute;z-index:10000;}
+#chkbox {border:#dfdfdf solid 1px;width:300px;padding:10px 10px 10px 10px;margin:0;background:url('../../../../../_core/image/_public/bg_list_tt.jpg') #ffffff repeat-x top;}
+#chkbox .msg {}
+#chkbox .msg h3 {margin:0;padding:0 0 9px 0;font-size:14px;font-weight:bold;font-family:"malgun gothic","dotum";border-bottom:#dfdfdf dashed 1px;}
+#chkbox .msg h3 img {position:relative;top:3px;}
+#chkbox .msg div {padding:10px 0 0 22px;color:#999;}
+#chkbox .ibox {padding:10px 0 10px 22px;}
+#chkbox .input {width:100px;}
+#chkbox .btnblue {width:80px;}
+/* @pwbox  */
+
+/* oneline Reply */
+div.oneline {padding:5px 10px 10px 30px; background: url(image/reply.png) no-repeat 0 10px;border:0;}
+div.oneline .line {border-bottom:#efefef solid 1px;padding:3px 0 3px 0;}
+div.oneline .cont {padding:10px 0 0 0;}
+div.oneline .cont img {vertical-align:top;padding:0 3px 0 3px;}
+div.oneline .cont .st {color:#dfdfdf;padding:0 5px 0 5px;}
+div.oneline .cont .date {color:#aaaaaa;font-size:11px;}
+div.oneline .comment_reply img {vertical-align:top;padding:3px 3px 0 3px;}
+div.oneline .cont .link a {color:#aaaaaa !important;font-size:11px;}
+div.oneline .comment_reply {margin-top: 5px;}
+div.oneline .comment_reply .st_secret{color: #d03306;}
+div.oneline .cont .td1 a {color:#aaaaaa;font-size:11px;}
+div.oneline .cont .td2 {font-family:dotum;font-size:12px;line-height:150%;font-family:dotum;font-size:12px;color:#666666;}
+div.oneline .cont .td2 img {padding:0 0 0 2px;}
+div.oneline .new {font-family:arial;font-size:10px;color:#ff0000;}
+
+.wbox {}
+.wbox table {width:100%;border-spacing:0px;border-collapse:collapse;}
+.wbox textarea {overflow:auto;width:98.5%;height:27px;border:#dfdfdf solid 1px;padding:3px;color:#666;line-height:150%;font-family:dotum;font-size:11px;}
+.wbox input {}
+.wbox .boxresize {margin-top:3px;font-size:11px;font-family:dotum;color:#c0c0c0;cursor:pointer;text-decoration:underline;}
+
+.noscroll {
+    overflow: hidden;
+}
+
+.hiddendiv {
+    display: none;
+    white-space: pre-wrap;
+    width: 500px;
+    min-height: 50px;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    overflow: hidden;
+    padding: 5px;
+    word-wrap: break-word;
+}​
+
+

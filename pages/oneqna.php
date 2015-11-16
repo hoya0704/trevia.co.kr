@@ -1,0 +1,1 @@
+<iframe name="commentFrame" id="commentFrame" src="/?r=<?php echo $r?>&amp;m=comment&amp;skin=_pc/resort&amp;hidepost=0&amp;iframe=Y&amp;cync=[bbs][15][uid,comment,oneline,d_comment][rb_bbs_data][1][m:bbs,bid:resort,uid:15]&amp;CMT=" width="100%" height="0" frameborder="0" scrolling="no" allowTransparency="true"></iframe>

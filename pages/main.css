@@ -1,0 +1,17 @@
+#subboard div{top:0px}
+
+.clsBannerScreen {overflow: hidden;position: relative;height: 478px;width: 960px; border:0px solid #e1e1e1; cursor:pointer; clear:both;}
+.clsBannerScreen .images {position:absolute; display:none; }
+
+#label_3 {}
+#label_3 ul, li {list-style:none;  z-Index:999;}
+#label_3 .clsBannerButton {position:absolute;margin:20px 0 0 780px;width:200px;cursor:pointer;border-bottom:0px solid #e1e1e1;}
+#label_3 .clsBannerButton li {width:10px;float:left;border-right:0px solid #e1e1e1;padding:2px 0 0 10px;}
+#label_3 .clsBannerButton li.fir {border-left:0px solid #e1e1e1;}
+#label_3 .clsBannerButton li.labelOverClass {font-weight:bold;}
+
+#bn_mk {}
+#bn_m1 {position: absolute;margin:-478px 0 0 0;z-index:1;padding:0px 0px 0px 0px;}
+#bn_m2 {position: absolute;margin:-478px 0 0 0;z-index:1;padding:0 0 0 943px;}
+#bn_m3 {position: absolute;margin:-18px 0 0 0;z-index:1;padding:0px 0 0 943px;}
+#bn_m4 {position: absolute;margin:-18px 0 0 0;z-index:1;padding:0px 0 0 0px;}

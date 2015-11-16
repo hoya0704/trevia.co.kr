@@ -1,0 +1,26 @@
+/*트레비아 메인*/
+#contents_wrap {width:720px;}
+.contents_pop_wrap h4{margin:30px 0 15px 0;}
+.contents_pop_wrap ul {overflow:hidden;}
+
+.contents_pop01 ul li {float:left;}
+.contents_pop01 ul li {margin-left:20px;}
+.contents_pop01 ul li:first-child {margin-left:0px;}
+
+.contents_pop02 ul li {float:left;margin-left:15px;}
+.contents_pop02 ul li:first-child {margin-left:0;}
+.contents_pop02 dl {text-align:center;margin-top:16px;}
+.contents_pop02 dt {color:#333;margin-bottom:7px;}
+
+
+/*여행상품 상세페이지*/
+.tour_detail_wrap {overflow:hidden;border:1px solid #d7d7d7;padding:14px;}
+.tour_detail {width:270px;float:right;}
+.tour_detail_wrap > img {float:left;margin-right:11px;}
+.tour_detail_wrap .detail_title {width:247px;margin-bottom:13px;border:1px solid #dedede;color:#343434;background-color:#f2f2f2;padding:10px;line-height:20px;}
+.tour_detail_wrap h4 {font-size:24px;color:#303030;margin-bottom:33px;line-height:28px;}
+.tour_detail_wrap p.tour_price {margin-bottom:9px;font-size:18px;color:#dd252f;}
+.tour_detail_wrap ul {border-top:1px solid #ddd;padding-top:12px;margin-bottom:4px;}
+.tour_detail_wrap ul li {line-height:16px;}
+.detail_contents {margin-top:57px;}
+

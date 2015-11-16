@@ -1,0 +1,22 @@
+<?php
+if(!defined('__KIMS__')) exit;
+
+
+// 업무입력
+$_tmp = db_query( "select count(*) from ".$table[$module.'history'], $DB_CONNECT );
+if ( !$_tmp ) {
+$_tmp = ("
+
+CREATE TABLE ".$table[$module.'history']." (
+  idx int(11) NOT NULL AUTO_INCREMENT,
+  writer int(11) NOT NULL,
+  cp varchar(12) NOT NULL,
+  content varchar(80) NOT NULL,
+  send_date varchar(14) NOT NULL,
+  from_type varchar(10) NOT NULL,
+  PRIMARY KEY (idx)
+) ENGINE=".$DB['type']." CHARSET=utf8");
+db_query($_tmp, $DB_CONNECT);
+db_query("OPTIMIZE TABLE ".$table[$module.'history'],$DB_CONNECT); 
+}
+?>

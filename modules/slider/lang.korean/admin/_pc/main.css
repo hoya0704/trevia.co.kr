@@ -1,0 +1,8 @@
+#slider { margin:0; padding:0 0 0 20px; }
+#slider li { padding:2px 0; }
+#slider p { margin:5px 0; }
+#slider label { display:inline-block; width:55px; }
+#slider input { width:250px; }
+
+p.controls { width:335px; }
+p.controls input { margin-left:160px; }

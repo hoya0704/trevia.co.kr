@@ -1,0 +1,166 @@
+<?php 
+$tmp = getDbData($table['s_site'],"id='".$r."'","uid");
+$siteCode = $tmp[0];
+
+function getRInfo($sCode)
+{
+	$row = getUidData("rb_s_site", $sCode);
+
+	return $row['id'];
+}
+?>
+<div id="travelinfo">
+<img src="/pages/image/trainfomain/banner_trainfo.jpg" alt="" class="banner" />
+<div class="border best">
+	<h3><a href="<?php echo "?r=".($r=="maldives"?$r:"mexico")."&amp;m=bbs&amp;bid=travelinfo2"?>"><img src="/pages/image/trainfomain/title_trainfo_best.gif" alt="BEST 여행정보" /></a></h3>
+	<ul class="best">
+	<?php
+	if($r=="maldives")
+		$resBest = getDbArray($table['bbsdata'],"site='2' AND bbsid='travelinfo2' AND notice = 0","uid, site, bbsid, subject, upload, content, d_regis","hit","desc","2","1");
+	else
+		$resBest = getDbArray($table['bbsdata'],"site!='2' AND bbsid='travelinfo2' AND notice = 0","uid, site, bbsid, subject, upload, content, d_regis","hit","desc","2","1");
+	?>
+	<?php for($i = 1; ($infoBest = db_fetch_array($resBest)); $i++):?>
+	<?php $_thumbimg=getUploadImage2($infoBest['upload'],$infoBest['d_regis'],$infoBest['content'],"jpg|jpeg|gif|png")?>
+	<?php if(empty($_thumbimg)) $_thumbimg = "/pages/image/trainfomain/noimg_".($r=="maldives"?"maldives":"trevia").".jpg"?>
+	<li>
+		<img src="<?php echo $_thumbimg?>" width="214" height="140" />
+		<div>
+			<a href="<?php echo "?r=".getRInfo($infoBest['site'])."&amp;m=bbs&amp;bid=".$infoBest['bbsid']."&amp;uid=".$infoBest['uid']?>"><strong><?php echo getStrCut($infoBest['subject'], 15, "...")?></strong></a>
+			<p>
+				<a href="<?php echo "?r=".getRInfo($infoBest['site'])."&amp;m=bbs&amp;bid=".$infoBest['bbsid']."&amp;uid=".$infoBest['uid']?>"><?php echo getStrCut(strip_tags($infoBest['content']), 80, "... [more]")?></a>
+			</p>
+		</div>
+	</li>
+	<?php endfor?>
+	</ul>
+</div>
+<div class="best">
+	<h3><a href="<?php echo "?r=".($r=="maldives"?$r:"mexico")."&amp;m=bbs&amp;bid=travelinfo"?>"><img src="/pages/image/trainfomain/title_trainfo_hits.gif" alt="HITS 경유지정보" /></a></h3>
+	<ul class="hits">
+	<?php
+	if($r=="maldives")
+		$resHits = getDbArray($table['bbsdata'],"site='2' AND bbsid='travelinfo' AND notice = 0","uid, site, bbsid, subject, upload, content, d_regis","hit","desc","2","1");
+	else
+		$resHits = getDbArray($table['bbsdata'],"site!='2' AND bbsid='travelinfo' AND notice = 0","uid, site, bbsid, subject, upload, content, d_regis","hit","desc","2","1");
+	?>
+	<?php for($i = 1; ($infoHits = db_fetch_array($resHits)); $i++):?>
+	<?php $_thumbimg=getUploadImage2($infoHits['upload'],$infoHits['d_regis'],$infoHits['content'],"jpg|jpeg|gif|png")?>
+	<?php if(empty($_thumbimg)) $_thumbimg = "/pages/image/trainfomain/noimg_".($r=="maldives"?"maldives":"trevia").".jpg"?>
+	<li>
+		<img src="<?php echo $_thumbimg?>" width="214" height="140" />
+		<div>
+			<a href="<?php echo "?r=".getRInfo($infoHits['site'])."&amp;m=bbs&amp;bid=".$infoHits['bbsid']."&amp;uid=".$infoHits['uid']?>"><strong><?php echo getStrCut($infoHits['subject'], 15, "...")?></strong></a>
+			<p>
+				<a href="<?php echo "?r=".getRInfo($infoHits['site'])."&amp;m=bbs&amp;bid=".$infoHits['bbsid']."&amp;uid=".$infoHits['uid']?>"><?php echo getStrCut(strip_tags($infoHits['content']), 80, "... [more]")?></a>
+			</p>
+		</div>
+	</li>
+	<?php endfor?>
+	</ul>
+</div>
+<div class="clear"></div>
+
+<div class="border latest">
+	<h3><a href="<?php echo "?r=".($r=="maldives"?$r:"mexico")."&amp;m=bbs&amp;bid=travelinfo2"?>"><img src="/pages/image/trainfomain/title_trainfo_latest_01.gif" alt="최근 여행정보" /></a></h3>
+	<ul class="latest">
+	<?php
+	if($r=="maldives")
+		$resLatest = getDbArray($table['bbsdata'],"site='2' AND bbsid='travelinfo2' AND notice = 0","uid, site, bbsid, subject, d_regis","uid","desc","3","1");
+	else
+		$resLatest = getDbArray($table['bbsdata'],"site!='2' AND bbsid='travelinfo2' AND notice = 0","uid, site, bbsid, subject, d_regis","uid","desc","3","1");
+	?>
+	<?php for($i = 1; ($infoLatest = db_fetch_array($resLatest)); $i++):?>	
+	<li>
+		- <a href="<?php echo "?r=".getRInfo($infoLatest['site'])."&amp;m=bbs&amp;bid=".$infoLatest['bbsid']."&amp;uid=".$infoLatest['uid']?>"><?php echo getStrCut($infoLatest['subject'], 29, "...")?> [<?php echo getDateFormat($infoLatest['d_regis'],"Y.m.d")?>]</a>
+	</li>
+	<?php endfor?>
+	</ul>
+</div>
+<div class="latest">
+	<h3><a href="<?php echo "?r=".($r=="maldives"?$r:"mexico")."&amp;m=bbs&amp;bid=travelinfo"?>"><img src="/pages/image/trainfomain/title_trainfo_latest_02.gif" alt="최근 경유지정보" /></a></h3>
+	<ul class="latest">
+	<?php
+	if($r=="maldives")
+		$resLatest = getDbArray($table['bbsdata'],"site='2' AND bbsid='travelinfo' AND notice = 0","uid, site, bbsid, subject, d_regis","uid","desc","3","1");
+	else
+		$resLatest = getDbArray($table['bbsdata'],"site!='2' AND bbsid='travelinfo' AND notice = 0","uid, site, bbsid, subject, d_regis","uid","desc","3","1");
+	?>
+	<?php for($i = 1; ($infoLatest = db_fetch_array($resLatest)); $i++):?>	
+	<li>
+		- <a href="<?php echo "?r=".getRInfo($infoLatest['site'])."&amp;m=bbs&amp;bid=".$infoLatest['bbsid']."&amp;uid=".$infoLatest['uid']?>"><?php echo getStrCut($infoLatest['subject'], 29, "...")?> [<?php echo getDateFormat($infoLatest['d_regis'],"Y.m.d")?>]</a>
+	</li>
+	<?php endfor?>
+	</ul>
+</div>
+<div class="border latest">
+	<h3><a href="<?php echo "?r=".($r=="maldives"?$r:"mexico")."&amp;m=bbs&amp;bid=resortnews"?>"><img src="/pages/image/trainfomain/title_trainfo_latest_03.gif" alt="리조트 소식" /></a></h3>
+	<ul class="latest">
+	<?php
+	if($r=="maldives")
+		$resLatest = getDbArray($table['bbsdata'],"site='2' AND bbsid='resortnews' AND notice = 0","uid, site, bbsid, subject, d_regis","uid","desc","3","1");
+	else
+		$resLatest = getDbArray($table['bbsdata'],"site!='2' AND bbsid='resortnews' AND notice = 0","uid, site, bbsid, subject, d_regis","uid","desc","3","1");
+	?>
+	<?php for($i = 1; ($infoLatest = db_fetch_array($resLatest)); $i++):?>	
+	<li>
+		- <a href="<?php echo "?r=".getRInfo($infoLatest['site'])."&amp;m=bbs&amp;bid=".$infoLatest['bbsid']."&amp;uid=".$infoLatest['uid']?>"><?php echo getStrCut($infoLatest['subject'], 29, "...")?> [<?php echo getDateFormat($infoLatest['d_regis'],"Y.m.d")?>]</a>
+	</li>
+	<?php endfor?>
+	</ul>
+</div>
+<div class="latest">	
+	<h3><a href="<?php echo "?r=".($r=="maldives"?$r:"mexico")."&amp;m=bbs&amp;bid=airline"?>"><img src="/pages/image/trainfomain/title_trainfo_latest_04.gif" alt="항공일정" /></a></h3>
+	<ul class="latest">
+	<?php
+	if($r=="maldives")
+		$resLatest = getDbArray($table['bbsdata'],"site='2' AND bbsid='airline' AND notice = 0","uid, site, bbsid, subject, d_regis","uid","desc","3","1");
+	else
+		$resLatest = getDbArray($table['bbsdata'],"site!='2' AND bbsid='airline' AND notice = 0","uid, site, bbsid, subject, d_regis","uid","desc","3","1");
+	?>
+	<?php for($i = 1; ($infoLatest = db_fetch_array($resLatest)); $i++):?>	
+	<li>
+		- <a href="<?php echo "?r=".getRInfo($infoLatest['site'])."&amp;m=bbs&amp;bid=".$infoLatest['bbsid']."&amp;uid=".$infoLatest['uid']?>"><?php echo getStrCut($infoLatest['subject'], 29, "...")?> [<?php echo getDateFormat($infoLatest['d_regis'],"Y.m.d")?>]</a>
+	</li>
+	<?php endfor?>
+	</ul>
+</div>
+<div class="border best tmargin">
+	<?php $bbsid = $r=="maldives"?"epilogue":"tour"?>
+	<h3><a href="<?php echo "?r=".($r=="maldives"?$r:"mexico")."&amp;m=bbs&amp;bid=".$bbsid?>"><img src="/pages/image/trainfomain/title_trainfo_latest_05<?php echo $r!="maldives"?"_02":""?>.gif" alt="생생~ 여행후기" /></a></h3>
+	<ul class="best">
+	<?php
+	if($r=="maldives")
+		$resBest = getDbArray($table['bbsdata'],"site='2' AND bbsid='".$bbsid."' AND notice = 0","uid, site, bbsid, subject, upload, content, d_regis","uid","desc","1","1");
+	else
+		$resBest = getDbArray($table['bbsdata'],"site!='2' AND bbsid='".$bbsid."' AND notice = 0","uid, site, bbsid, subject, upload, content, d_regis","uid","desc","1","1");
+	?>
+	<?php for($i = 1; ($infoBest = db_fetch_array($resBest)); $i++):?>
+	<?php $_thumbimg=getUploadImage2($infoBest['upload'],$infoBest['d_regis'],$infoBest['content'],"jpg|jpeg|gif|png")?>
+	<?php if(empty($_thumbimg)) $_thumbimg = "/pages/image/trainfomain/noimg_".($r=="maldives"?"maldives":"trevia").".jpg"?>
+	<li>
+		<img src="<?php echo $_thumbimg?>" width="214" height="140" />
+		<div>
+			<a href="<?php echo "?r=".getRInfo($infoBest['site'])."&amp;m=bbs&amp;bid=".$infoBest['bbsid']."&amp;uid=".$infoBest['uid']?>"><strong><?php echo getStrCut($infoBest['subject'], 15, "...")?></strong></a>
+			<p>
+				<a href="<?php echo "?r=".getRInfo($infoBest['site'])."&amp;m=bbs&amp;bid=".$infoBest['bbsid']."&amp;uid=".$infoBest['uid']?>"><?php echo getStrCut(strip_tags($infoBest['content']), 150, "... [more]")?></a>
+			</p>
+		</div>
+	</li>
+	<?php endfor?>
+	</ul>
+</div>
+<div class="quick">
+	<h3><img src="/pages/image/trainfomain/title_quick.gif" alt="주요여행정보 바로가기" /></h3>
+	<ul>
+		<li><a href="<?php echo RW("m=bbs&amp;bbsid=travelinfo2&amp;uid=1032")?>"><img src="/pages/image/trainfomain/quick_01.gif" alt="" /></a></li>
+		<li><a href="<?php echo RW("m=bbs&amp;bbsid=travelinfo2&amp;uid=1025")?>"><img src="/pages/image/trainfomain/quick_02.gif" alt="" /></a></li>
+		<?php if($r=="maldives"):?>
+		<li><a href="<?php echo RW("m=bbs&amp;bbsid=travelinfo2&amp;uid=1060")?>"><img src="/pages/image/trainfomain/quick_03_01.gif" alt="" /></a></li>
+		<?else:?>
+		<li><a href="/?r=mexico&m=bbs&bid=travelinfo2&uid=2529"><img src="/pages/image/trainfomain/quick_03_02.gif" alt="" /></a></li>
+		<?endif?>
+	</ul>
+</div>
+<div class="clear"></div>
+</div>

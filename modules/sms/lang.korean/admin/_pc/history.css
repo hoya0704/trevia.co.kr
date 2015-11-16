@@ -1,0 +1,5 @@
+#history { width: 100%; border-collapse: collapse; }
+#history th { padding: 5px; border-bottom: 2px #ccc solid; }
+#history td { padding: 5px; border-bottom: 1px #ccc solid; }
+#history td.center { text-align: center; }
+#history td.empty { height: 40px; text-align: center; font-weight: bold; }
